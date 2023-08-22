@@ -1,0 +1,257 @@
+<?php session_start();?>
+
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEE UP - LOGIN</title>
+  
+</head>
+<link rel="icon" href="imgs/iconSEEUP.png">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-image: url(imgs/blocoA.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Definindo estilo do formulário de login */
+.area-login {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 100vh;
+  padding-left: 280px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.308);
+}
+
+.login {
+  width: 500px;
+  background-color: #ffffff8c;
+  padding: 40px;
+  margin-top: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.349);
+  margin-bottom: 20px;
+  position: relative; /* Added positioning to the login container */
+}
+
+.login img {
+  width: auto;
+  display: block;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Handjet&family=Lilita+One&family=Press+Start+2P&family=Staatliches&display=swap');
+.login form input[type="text"],
+.login form input[type="password"] {
+  background: #f2f2f2bd;
+  width: 100%;
+  height: 55px;
+  padding: 10px;
+  border-radius: 18px;
+  border: none;
+  margin-bottom: 10px;
+  color: #131212;
+  font-size: 12px;
+  font-family: 'Handjet', cursive;
+  font-family: 'Lilita One', cursive;
+  font-family: 'Press Start 2P', cursive;
+  font-family: 'Staatliches', cursive;
+}
+
+.login form input[type="text"]::placeholder,
+.login form input[type="password"]::placeholder {
+  color: transparent;
+}
+
+.login form input[type="text"]:focus::placeholder,
+.login form input[type="password"]:focus::placeholder {
+  color: #141414c4;
+  font-size: 14px;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;1,300&display=swap');
+.login form label {
+  position: absolute;
+  top: 1px;
+  left: 15px;
+  pointer-events: none;
+  color: #161515a1;
+  transition: 0.3s;
+  font-size: 18px;
+  margin-top: 20px;
+  font-family: 'Zilla Slab', serif;
+
+
+}
+
+.login form input[type="text"]:focus + label,
+.login form input[type="text"]:valid + label,
+.login form input[type="password"]:focus + label,
+.login form input[type="password"]:valid + label {
+  top: -13px;
+  left: 10px;
+  font-size: 13px;
+  color: #464545;
+}
+
+
+.login p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+img {
+  max-width: 25%;
+  height: auto;
+  width: auto;
+  filter: brightness(0%);
+  margin-top: 10px;
+}
+
+#icon {
+  position: absolute;
+  top: 45%;
+  right: 20px;
+  transform: translateY(-50%);
+  background: url("imgs/i.png");
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+#icon.ver {
+  background: url("imgs/ii.png");
+  background-size: cover;  
+}
+
+  @import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+.suap {
+  /* Estilos para tornar o botão semelhante aos inputs */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 13px;/* Define a proporção da altura em relação à largura */
+  border: none;
+  background-color: #40ad54;
+  color: #f2f2f2;
+  cursor: pointer;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-family: 'Rubik Wet Paint', cursive;
+  font-size: 15px;
+}
+/* Estilos para telas pequenas */
+@media (max-width: 768px) {
+  .area-login {
+    padding-left: 20px;
+  }
+
+  .login {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .login form input[type="text"],
+  .login form input[type="password"] {
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .login form label {
+    font-size: 16px;
+  }
+
+  #icon {
+    right: 10px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .suap {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+</style>
+<body>
+  <div class="area-login">
+    <div class="login">
+      <img src="imgs/logoSEEUP.png" />
+      <form action="suap.php" method="POST">
+        <div style="position: relative;">
+          <input name="usuario" type="text" id="usuario" required>
+          <label for="usuario">Sua Matrícula:</label>
+        </div>
+        <div style="position: relative;">
+          <input name="senha" type="password" id="senha" required>
+          <label for="senha">Sua Senha:</label>
+          <div id="icon" onclick="mostraSenha()"></div>
+        </div>
+        <button class="suap" name="entrar"  value="entrar" >ACESSAR</button>
+      </form>
+
+      <div class="alerta-erro"></div>
+    </div>
+  </div>
+  <script>
+    const senha = document.getElementById('senha');
+    const icon = document.getElementById('icon');
+    
+    function mostraSenha() {
+      if (senha.type === 'password') {
+        senha.setAttribute('type', 'text');
+        icon.classList.add('ver');
+      } else {
+        senha.setAttribute('type', 'password');
+        icon.classList.remove('ver');
+      }
+    }
+  </script>
+  <script>
+    // Obtém o botão pelo seletor de classe
+    const suapButton = document.querySelector('.suap');
+  
+    // Adiciona um ouvinte de evento de clique ao botão
+    suapButton.addEventListener('click', function() {
+      // Código a ser executado quando o botão for clicado
+  
+      // Cria uma solicitação AJAX usando o objeto XMLHttpRequest
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'suap.php', true);
+  
+      // Define a função de retorno de chamada para tratar a resposta
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          // Manipule a resposta aqui (se necessário)
+          console.log(xhr.responseText);
+        }
+      };
+  
+      // Envia a solicitação
+      xhr.send();
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>
