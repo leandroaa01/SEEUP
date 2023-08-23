@@ -10,8 +10,6 @@ CREATE TABLE Salas (
   situacao VARCHAR (12) DEFAULT 'Disponível',
   bloco VARCHAR (7) DEFAULT 'Bloco A'
 );
-UPDATE Salas SET nome_chave = 'LAB ELETRÔNICA' WHERE id = 13;
-
 
 
 CREATE TABLE Sevidores (
