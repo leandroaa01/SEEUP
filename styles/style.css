@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Press+Start+2P&family=Staatliches&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.blocoA {
+ margin-bottom: 30px;
+ padding-left: 2%;
+ margin-top: 25px;
+ color:rgb(0, 0, 0);
+ font-family: 'Lilita One', cursive;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Staatliches', cursive;
+font-size: 15px;
+
+}
+@media (min-width: 1420px) {
+.cofig{
+min-width:270px;
+width: 14%;
+display: flex;
+float: left;
+margin-left: 1%;
+margin-right: 1%;
+}
+
+.piso1 {
+    flex-wrap: wrap;
+   
+}
+
+.cofig .sala{
+min-width: 250px;
+width: 290px;
+padding: 45px;
+box-sizing: border-box;
+height: 200px;
+color: rgb(234, 234, 241);
+text-transform: uppercase;
+border: 2px solid rgba(133, 133, 133, 0.808);
+border-radius: 10px;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+text-align: center;
+cursor: pointer;
+margin-left: 10%;
+margin-bottom: 15%;
+}
+}
+.cofig{
+  min-width:270px;
+  width: 14%;
+  display: flex;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  }
+  
+  .piso1 {
+      flex-wrap: wrap;
+     
+  }
+  
+  .cofig .sala{
+  min-width: 250px;
+  width: 290px;
+  padding: 45px;
+  box-sizing: border-box;
+  height: 210px;
+  color: rgb(234, 234, 241);
+  text-transform: uppercase;
+  border: 2px solid rgba(133, 133, 133, 0.808);
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 50%;
+  margin-bottom: 25%;
+  }
+
+.i {
+width: 100%;
+margin-bottom: 20px;
+float: left;
+text-align: center;
+font-family: 'Anton', sans-serif;
+font-size: 15px;
+}
+.i strong {
+    font-weight: bold;
+    font-family: 'Dai Banna SIL', serif;
+    font-weight: bold;
+}
+.situacao span{
+   font-size: 15px; 
+   font-family: 'Anton', sans-serif;
+   font-style: italic
+}
+  @import url('https://fonts.googleapis.com/css2?family=Dai+Banna+SIL:ital,wght@0,300;0,400;1,300&display=swap');
+.nome{
+ font-family: 'Dai Banna SIL', serif;
+ font-style: italic;
+}
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+.num p{
+font-family: 'Tilt Prism', cursive;
+font-size: 20px;
+}
+.modal{
+    width:120%;
+    height:200%;
+    opacity:95%;
+    background-color: rgba(35, 35, 36, 0);
+    display: none;
+    padding-top: -10%;
+    margin-top: -2%;
+
+}  
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+  
+  /* Estilização dos itens de informação */
+  .infos {
+    position: absolute;
+    list-style: none;
+    padding: 5px;
+    font-size: 15px;
+  
+  }
+  
+  .infos li {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 10px;
+    margin: auto;
+  }
+  
+ #labLabel {
+   
+  color: rgb(226, 225, 223);
+    height: 20px;
+    background-color: rgba(96, 39, 255, 0.836);
+    padding: 5px 17px; /* Ajusta o espaçamento interno */
+    border-radius: 10px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: inline-block; /* Torna o elemento ocupar apenas o espaço do conteúdo */
+    vertical-align: middle;
+}
+
+#statusLabel {
+  color: rgb(226, 225, 223);
+  height: 20px;
+  background-color: rgba(60, 255, 0, 0.836);
+  padding: 5px 17px; /* Ajusta o espaçamento interno */
+  border-radius: 10px;
+  font-weight: 700;
+  display: inline-block; /* Torna o elemento ocupar apenas o espaço do conteúdo */
+  font-weight: 700;
+  margin-bottom: 15px;
+  vertical-align: middle;
+  margin-left: 1%;
+  
+}
+#tipoLabel {
+  color: rgb(226, 225, 223);
+  height: 20px;
+  display: inline-block; /* Torna o elemento ocupar apenas o espaço do conteúdo */
+  background-color: rgba(255, 0, 157, 0.836);
+  padding: 5px 17px; /* Ajusta o espaçamento interno */
+  border-radius: 10px;
+ font-weight: 700;
+ margin-bottom: 15px;
+ vertical-align: middle;
+ margin-left: 1%;
+ 
+}
+
+#ocupadoLabel {
+  color: rgb(226, 225, 223);
+  height: 20px;
+  margin-right: 20px;
+  display: inline-block; /* Torna o elemento ocupar apenas o espaço do conteúdo */
+  background-color: rgba(98, 241, 69, 0.842);
+  padding: 5px 17px; /* Ajusta o espaçamento interno */
+  border-radius: 10px;
+ font-weight: 700;
+ margin-bottom: 15px;
+ vertical-align: middle;
+ margin-left: 0.7%;
+
+}
+
+#horarioLabel {
+  color: rgb(226, 225, 223);
+  height: 20px;
+  margin-right: 20px;
+  display: inline-block; /* Torna o elemento ocupar apenas o espaço do conteúdo */
+  background-color: rgba(212, 0, 255, 0.836);
+  padding: 5px 17px; /* Ajusta o espaçamento interno */
+  border-radius: 10px;
+ font-weight: 700;
+ margin-bottom: 10px;
+ vertical-align: middle;
+
+}
+
+#turmaLabel {
+  color: rgb(226, 225, 223);
+  height: 20px;
+  margin-right: 20px;
+  display: inline-block; /* Torna o elemento ocupar apenas o espaço do conteúdo */
+  background-color: rgba(0, 247, 205, 0.87);
+  padding: 5px 17px; /* Ajusta o espaçamento interno */
+  border-radius: 10px;
+ font-weight: 700;
+ margin-bottom: 10px;
+ vertical-align: middle;
+
+}
+
+#disciplinaLabel {
+  color: rgb(226, 225, 223);
+  height: 20px;
+  margin-right: 20px;
+  display: inline-block; /* Torna o elemento ocupar apenas o espaço do conteúdo */
+  background-color:  rgb(255, 89, 0);
+  padding: 5px 17px; /* Ajusta o espaçamento interno */
+  border-radius: 10px;
+ top: 2px;
+ font-weight: 700;
+ margin-bottom: 10px;
+ vertical-align: middle;
+
+}
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    color: aliceblue;
+    text-transform: uppercase;
+    padding: 3px;
+    top: 5px;
+   
+  }
+  span{
+      color: aliceblue;
+    text-transform: uppercase;
+   
+  }
+  
+  .fecharModal, .resevar {
+    position: absolute;
+    text-align: center;
+    background-color: rgb(3, 107, 29);
+    color: rgb(244, 247, 250);
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: medium;
+    font-family: 'Anton', sans-serif;
+    border: 0.9px solid rgba(255, 255, 255, 0.678);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.755);
+    cursor: pointer;
+    margin-bottom: 20px; 
+}
+
+.fecharModal{
+  margin-left:-45%;
+  top: 100%;
+}
+.resevar{
+  margin-left:-30%;
+  top: 100%;
+}
+
+
+/* Estilos para telas pequenas (smartphones) */
+@media screen and (max-width: 600px) {
+  body{
+    background: #ffffffd3;
+  }
+   img {
+position: relative;
+float: left; /* Adiciona o alinhamento à esquerda */
+margin-left: 28px;
+max-width:50px;
+height: auto;
+width: auto;
+filter: brightness(0%);
+}
+
+  .blocoA {
+    margin-bottom: 14px;
+   padding-left: 2%;
+   margin-top: 5px;
+   color:rgb(0, 0, 0);
+   font-family: 'Lilita One', cursive;
+  font-family: 'Press Start 2P', cursive;
+  font-family: 'Staatliches', cursive;
+  font-size: 9px;
+  }
+      .cofig {
+     padding-bottom: 10px;
+     padding: 25px;
+      width: 90%;
+      margin-left: 0;
+      margin-right: 0;
+      text-align: center;
+      align-items: center;
+  }
+
+  .cofig .sala {
+    padding-bottom: 10px;
+    padding: 25px;
+      width: 90%;
+      margin-left: 0;
+      margin-right: 0;
+      text-align: center;
+      align-items: center;
+  }
+
+  .i {
+      width: 100%;
+      margin-left: 0;
+      text-align: center;
+      margin-top: 10px;
+  }
+
+  .modal{
+    position:absolute;
+    width:90%;
+    height:100%;
+    background-color: rgba(0, 0, 0, 0);
+    display: none;
+    align-items: center;
+    top: 100px
+  }
+
+  .corpoModal {
+    width: 120%;
+    height:100%; /* Ajuste conforme necessário */
+    padding: 10px;
+    margin: 10px auto;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 900;
+}
+ 
+
+  .fecharModal,
+  .resevar {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+  }
+
+  .infos {
+    list-style: none;
+    padding: 0;
+    top: 0; /* Ajuste conforme necessário */
+}
+
+.infos li {
+    padding: 5px;
+    top: 0; /* Ajuste conforme necessário */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    font-size: 10px;
+}
+
+li {
+    color: aliceblue;
+    text-transform: uppercase;
+    padding: 3px;
+    font-size: 10px;
+    font-weight: 900;
+    top: 0; /* Ajuste conforme necessário */
+}
+}

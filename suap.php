@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=UTF-8');
 if (isset($_POST["entrar"])) {
     $usuario = $_POST["usuario"];
     $senha = $_POST["senha"];
@@ -69,13 +70,13 @@ $resultado = curl_exec($ch);
         // O usuário não é um aluno e nem um servidor, redirecione para a página inicial
         echo '<script>
         alert("Usuario ou Senha incorreta!");
-        window.location.href = "index.php";
+        window.location.href = "index.html";
         </script>';
     }
 } else {
     // Tratamento para caso o acesso não tenha sido obtido
     echo '<script>
-    window.location.href = "index.php";
+    window.location.href = "index.html";
     </script>';
 }
 

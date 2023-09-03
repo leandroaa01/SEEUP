@@ -157,7 +157,7 @@ if (isset($_POST["sit"])) {
       }
     }
   } else {
-    echo "Laboratório Fechado  no Horario Atual.";
+    echo "Local Fechado no Horario Atual";
   }
 }
 

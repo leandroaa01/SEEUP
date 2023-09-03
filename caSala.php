@@ -3,7 +3,7 @@
 if (!isset($_SESSION['chave'])) {
   // Redireciona para a página de índice (index.html)
   echo '<script>
-        window.location.href = "index.php";
+        window.location.href = "index.html";
         </script>';
 }
 if (!isset($_SESSION['tipoVinculo']) || ($_SESSION['tipoVinculo'] !== "Servidor" && $_SESSION['matricula'] !== "40104317841")) {
@@ -43,6 +43,7 @@ if (!isset($_SESSION['tipoVinculo']) || ($_SESSION['tipoVinculo'] !== "Servidor"
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     }
     h1 {
       color: #020202;
@@ -50,6 +51,7 @@ if (!isset($_SESSION['tipoVinculo']) || ($_SESSION['tipoVinculo'] !== "Servidor"
       text-align: center;
       font-family: 'Anton', sans-serif;
       font-family: 'Roboto', sans-serif;
+      font-weight: bold;
     }
     label {
       color: #45a049;
@@ -253,7 +255,7 @@ border:  0.9px solid rgba(0, 0, 0, 0.678);
 box-shadow: 0px 0px 5px rgba(104, 104, 104, 0.755);
 margin-left: 90%;
 position: relative;
-top: -70px;
+top: -120px;
 text-align: center;
 cursor: pointer;
 }
@@ -265,21 +267,21 @@ cursor: pointer;
   <form action="cadastroSala.php" method="POST" autocomplete="off">
     <div class="form-group">
       <label for="nome-sala"required>Nome da Sala:</label>
-      <input type="text" id="nome-sala" name="nome-sala" class="buscarInfo">
+      <input type="text" id="nome-sala" name="nome-sala" class="buscarInfo" required>
       <div class="select-wrapper">
         <select class="selsel" id="nSala" name="nSala"></select>
       </div>
     </div>
     <div class="form-group">
       <label for="professor" required>Professor:</label>
-      <input type="text" id="professor" name="professor" class="buscarInfo">
+      <input type="text" id="professor" name="professor" class="buscarInfo"required>
       <div class="select-wrapper">
         <select class="selsel" id="nProf" name="nProf"></select>
       </div>
     </div>
     <div class="form-group">
       <label for="turma" required>Turma:</label>
-      <input type="text" id="turma" name="turma" class="buscarInfo">
+      <input type="text" id="turma" name="turma" class="buscarInfo"required>
       <div class="select-wrapper">
         <select class="selsel" id="nTurma" name="nTurma"></select>
         <input type="hidden" name="salaDado">
@@ -290,7 +292,7 @@ cursor: pointer;
     </div>
     <div class="form-group">
       <label for="disciplina" required>Disciplina:</label>
-      <input type="text" id="disciplina" name="disciplina" class="buscarInfo">
+      <input type="text" id="disciplina" name="disciplina" class="buscarInfo" required>
       <div class="select-wrapper">
         <select class="selsel" id="nDisciplina" name="nDisciplina"></select>
       </div>
@@ -298,14 +300,14 @@ cursor: pointer;
     <div class="form-group">
       <label>Tipo do Agendamento:</label>
       <select name="evento" id="evento">
-        <option value="unico">Evento único</option>
+        <option value="unico">Evento Único</option>
         <option value="semanal">Evento Semanal</option>
         <option value="trimestral">Evento Trimestral</option>
       </select>
       <label id="data1" for="data" required> Data Inicial: </label>
-      <input type="date" name="data1" id="data1">
+      <input type="date" name="data1" id="data1" required>
       <label id="data2" for="data"> Data de Final: </label>
-      <input type="date" name="data2" id="data2">
+      <input type="date" name="data2" id="data2" required>
     </div>
     <div class="form-group">
       <label for="turno">Turno:</label>
@@ -362,13 +364,16 @@ function voltar() {
 }
 </script>
   <script>
-$(document).ready(function() {
+  $(document).ready(function() {
   $(".buscarInfo").on("input", function() {
     var $input = $(this);
     var $selectWrapper = $input.next(".select-wrapper");
     var $select = $selectWrapper.find("select");
 
     if ($input.val().length > 0) {
+      $selectWrapper.show();
+      $select.empty();
+
       $.ajax({
         url: 'modal.php',
         type: 'POST',
@@ -376,22 +381,23 @@ $(document).ready(function() {
         success: function(svRetorno) {
           if (svRetorno !== '') {
             var resultado = svRetorno.split(";");
-            $select.empty();
             for (var i = 0; i < resultado.length - 1; i++) {
               var info = resultado[i].split("-");
+              var valor = info[0];
               var texto = info[1];
               $select.append('<option value="' + texto + '">' + texto + '</option>');
             }
-            $selectWrapper.show();
-          } else {
-            $selectWrapper.hide();
           }
         }
       });
     } else {
       $selectWrapper.hide();
-      $select.empty();
+      $select.val('');
     }
+  });
+
+  $(".buscarInfo").focus(function() {
+    $(".select-wrapper").hide();
   });
 
   $(".select-wrapper select").change(function() {
@@ -400,6 +406,7 @@ $(document).ready(function() {
     var selectedValue = $select.val();
     $input.val(selectedValue);
   });
+
 
 
 
